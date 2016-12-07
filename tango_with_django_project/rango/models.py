@@ -4,6 +4,9 @@ from django.db import models
 class Category(models.Model):
 	name = models.CharField(max_length=55, unique=True)
 
+	class Meta:
+		verbose_name_plural = 'Categories'
+
 	def __unicode__(self):
 		return self.name
 

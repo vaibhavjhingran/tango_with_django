@@ -16,9 +16,20 @@ class PageForm(forms.ModelForm):
 	url = forms.URLField(max_length=255, help_text="Enter the page URL.")
 	views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
+	def clean(self):
+		cleaned_data = self.cleaned_data
+		url = cleaned_data.get('url')
+		if url and not url.startswith("http://"):
+			url = 'http://' + url
+			cleaned_data['url'] = url
+
+			return cleaned_data
+
 	class Meta:
 		model = Page
 		# Instead of entering fields to include, we can...
 		# exclude the foriegn key.
 		exclude = ('category', )
+
+
 

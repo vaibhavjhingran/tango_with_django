@@ -31,7 +31,7 @@
 			<ul>
 				{% for page in pages %}
 					<li>
-						<a href="/rango/category/{{ page.url }}">{{ page.title }}</a>
+						<a href="{{ page.url }}">{{ page.title }}</a>
 					</li>
 				{% endfor %}
 			{% else %}
@@ -41,9 +41,9 @@
 		<div>
 			<a href='/rango/add_category/'>Add a new Category</a></br>
 		</div>
-		<div>
+<!-- 		<div>
 			<a href='/rango/add_page/'>Add a new Page</a></br>
-		</div>
+		</div> -->
 		<div>
 			<a href='/about'>About Page</a><br />
 			<img src="{% static 'images/file_1.jpg' %}"

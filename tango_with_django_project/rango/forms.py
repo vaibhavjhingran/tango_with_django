@@ -1,7 +1,7 @@
 from django import forms
 from rango.models import Category, Page
 
-class CategoryForms(forms.ModelForm):
+class CategoryForm(forms.ModelForm):
 	name = forms.CharField(max_length=55, help_text="Please enter a category name.")
 	views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 	likes = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
@@ -11,9 +11,9 @@ class CategoryForms(forms.ModelForm):
 		model = Category
 		fields = ('name', )
 
-class PageForms(forms.ModelForm):
+class PageForm(forms.ModelForm):
 	title = forms.CharField(max_length=128, help_text="Please enter a page title.")
-	url forms.URLField(max_length=255, help_text="Enter the page URL.")
+	url = forms.URLField(max_length=255, help_text="Enter the page URL.")
 	views = forms.IntegerField(widget=forms.HiddenInput(), initial=0)
 
 	class Meta:
@@ -21,3 +21,4 @@ class PageForms(forms.ModelForm):
 		# Instead of entering fields to include, we can...
 		# exclude the foriegn key.
 		exclude = ('category', )
+

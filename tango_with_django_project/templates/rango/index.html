@@ -8,9 +8,11 @@
 	<body>
 		<h1>Rango says: </h1>
 		<div>
-			hey there partner!<br />
+			Howdy, partner!<br />
 		</div>
 		<div>
+			<br />
+			<strong>Most Liked Categories:<br /></strong>
 			{% if categories %}
 			<ul>
 				{% for category in categories %}
@@ -21,6 +23,19 @@
 			</ul>
 			{% else %}
 				<strong>There are no categories present!</strong>
+			{% endif %}
+		</div>
+		<div>
+			<strong>Most Viewed Pages:<br /></strong>
+			{% if pages %}
+			<ul>
+				{% for page in pages %}
+					<li>
+						<a href="/rango/category/{{ page.url }}">{{ page.title }}</a>
+					</li>
+				{% endfor %}
+			{% else %}
+				<strong>No pages present!</strong>
 			{% endif %}
 		</div>
 		<div>

@@ -9,16 +9,22 @@
 		<h1>Rango says: </h1>
 		<div>
 			hey there partner!<br />
-			<strong>{{ boldmessage }}</strong>
+		</div>
+		<div>
+			{% if categories %}
+			<ul>
+				{% for category in categories %}
+				<li><strong> {{ category.name }} </strong></li>
+				{% endfor %}
+			</ul>
+			{% else %}
+				<strong>There are no categories present!</strong>
+			{% endif %}
 		</div>
 		<div>
 			<a href='/about'>About Page</a><br />
 			<img src="{% static 'images/file_1.jpg' %}"
 				alt="Picture of Man" />
-			<div>
-				<img src="{{ MEDIA_URL }}squirrel.gifv.mp4"
-					alt="GIF of Squirrel" /> 
-			</div>
 		</div>
 	</body>
 </html>

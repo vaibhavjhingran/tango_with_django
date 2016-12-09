@@ -1,3 +1,4 @@
 django==1.9.10
 pillow
 coverage
+django-registration-redux==1.4

@@ -18,7 +18,7 @@
 				<strong> Nothing to see here! </strong>
 				<strong> No pages in this Category section. </strong>
 			{% endif %}
-			<a href="{% url 'add_page' category_slug %}">Add a Page</a>
+			<a href="{% url 'add_page' category.slug %}">Add a Page</a>
 	{% else %}
 		<strong>The specified Category does not exist...</strong>
 	{% endif %}

@@ -115,6 +115,7 @@ PASSWORD_HASHERS = (
 )
 
 # Restricted viewing redirection
+
 LOGIN_URL = '/rango/login'
 
 # Internationalization
